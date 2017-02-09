@@ -1,0 +1,31 @@
+<% @page_title = "SIGN UP" %>
+ <div class="Sign_Form">
+  
+  <h1>Sign Up Here</h1>
+  <%= form_for :users , url: signup_path do |f| %>
+
+    <p> Username:</br> <%= f.text_field :username%> </p>
+    
+    <p> Email:</br> <%= f.text_field :email%> </p>
+    
+    <p> Password:</br> <%= f.password_field :password%></p>
+    
+    <%= f.submit :Signup %>
+  
+  <% end %>
+  
+  <% if @user.errors.any? %>
+    
+    <ul class="Signup_Errors">
+    
+    <% for message_error in @user.errors.full_messages %>
+      
+      <li>* <%= message_error %></li>
+    
+    <% end %>
+    
+    </ul>
+  
+  <% end %>
+
+</div>

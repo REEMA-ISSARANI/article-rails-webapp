@@ -1,0 +1,15 @@
+<% provide(:title,"LOG IN HERE") %>
+<h1>Log In</h1>
+
+<div class="Login_Form">
+ <%= form_for(:session, url: login_path) do |f| %>
+      
+      <p> Email:</br> <%= f.email_field :email%> </p>
+      <p> Password:</br> <%= f.password_field :password%></p>
+
+      <%= f.submit :LogIn %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", users_new_path %></p>
+    <!--<p>Log out? <%= link_to "Log out!",logout_path, method: :delete %></p>-->
+</div>
